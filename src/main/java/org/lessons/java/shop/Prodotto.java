@@ -5,14 +5,15 @@ import java.text.DecimalFormat;
 
 public class Prodotto {
 
-	int codice;
-	String nome;
+	static int codice;
+	static String nome;
 	String descrizione;
 	static float prezzo;
 	float iva;
+	String nomeEsteso;
 	
 	String dettagliProdotto() {
-		return codice + "," + " " + nome + "," + " " + descrizione + "," + " " + "€" + prezzo + "," + " " + "prezzo con iva del 5% = €" + iva;
+		return "Codice: " + codice + "," + " " +"Nome: " + nome + "," + " " + "Descrizione: " + descrizione + "," + " " + "Prezzo: " + "€"+ prezzo + ", " + " " + "Prezzo con Iva del 5% = €" + iva + "," + " " + "Nome Completo: " + nomeEsteso;
 	}
 	
 	public static void main(String[] args) {
@@ -34,6 +35,8 @@ public class Prodotto {
 		
 		float calcolaIva = (prezzo * 5) / 100;
 		product.iva = prezzo + calcolaIva;
+		
+		product.nomeEsteso = codice + nome;
 		
 		System.out.println(product.dettagliProdotto());
 

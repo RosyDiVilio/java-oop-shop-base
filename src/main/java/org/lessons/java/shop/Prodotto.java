@@ -20,6 +20,7 @@ public class Prodotto {
 		
 		Prodotto product = new Prodotto();
 		
+		//nome + descrizione
 		product.nome = "armadio";
 		product.descrizione = "oggetto molto utile";
 		
@@ -33,9 +34,11 @@ public class Prodotto {
 		float numeroDue = randomDue.nextFloat(1000);
 		product.prezzo = numeroDue;
 		
+		//calcola iva del prodotto
 		float calcolaIva = (prezzo * 5) / 100;
 		product.iva = prezzo + calcolaIva;
 		
+		//nome completo
 		product.nomeEsteso = codice + nome;
 		
 		System.out.println(product.dettagliProdotto());
